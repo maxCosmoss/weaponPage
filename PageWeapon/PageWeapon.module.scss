@@ -1,0 +1,216 @@
+@import 'scss/varibles';
+@import 'scss/functions';
+@import 'scss/mixin';
+
+.weapon{
+  &_page{
+    margin-top: 40px;
+    padding-left: 20px;
+    padding-right: 20px;
+    @include min980 {
+      display: flex;
+      gap: 40px;
+      margin-top: 60px;
+    }
+    article{
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+  }
+  &__sidebar{
+    @include min980 {
+      flex: 340px 0;
+      min-width: 340px;
+    }
+
+  }
+  &__content{
+    @include min980 {
+      width: calc(100% - 380px);
+      flex-grow: 1;
+    }
+  }
+&__card{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background: $componentGamersBg;
+  color: $componentGamersColor;
+  padding: 30px 10px;
+  font-size: 28px;
+  border-radius: 20px;
+  margin-bottom: 20px;
+  @include max979 {
+    font-size: 22px;
+    padding: 20px;
+  }
+
+  img{
+    width: auto;
+    height: auto;
+    margin-bottom: 40px;
+    min-width: 175px;
+  }
+}
+  &__spread_control{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background: $componentGamersBg;
+    color: $componentGamersColor;
+    padding: 40px 10px 30px 10px;
+    font-size: 24px;
+    border-radius: 20px;
+    margin-bottom: 40px;
+    @include max979 {
+      font-size: 18px;
+      padding: 10px 20px;
+    }
+    &__name{
+      opacity: 0.6;
+
+      @include max979 {
+        order: -1;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+      }
+
+    }
+    img{
+      width: auto;
+      height: auto;
+      margin-bottom: 40px;
+      @include max979{
+        margin-top: 30px;
+        margin-bottom: 30px;
+        max-height: 125px;
+      }
+    }
+  }
+  &__skins{
+    display: grid;
+    gap: 20px;
+    @include min570 {
+      grid-template-columns: 1fr 1fr;
+    }
+    @include min980 {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+  &__actions{
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+  }
+  &__filter{
+    padding: 30px;
+    background: $componentGamersImgBg;
+    border-radius: 20px;
+    position: sticky;
+    top: 120px;
+
+    @include max979 {
+      position: static;
+      padding: 10px 20px;
+      margin-bottom: 20px;
+    }
+    &__heading{
+      display: flex;
+      gap: 16px;
+      color: $headingColor;
+      text-transform: uppercase;
+
+      @include max979 {
+        text-transform: capitalize;
+        opacity: .6;
+        font-size: 18px;
+
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+      }
+      &__txt{
+        @include max979 {
+          flex-grow: 1;
+        }
+      }
+    }
+    &__list{
+      margin-top: 40px;
+    }
+    &__item{
+      display: flex;
+      align-items: center;
+      color: $componentGamersColor;
+      margin-top: 20px;
+      @include max979{
+        margin-top: 16px;
+      }
+
+      &__name{
+        opacity: .6;
+        flex-grow: 1;
+        &.active{
+          opacity: 1;
+        }
+      }
+      &__rang{
+        margin-right: 8px;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+      }
+      &__qty{
+        margin-left: 10px;
+        opacity: .6;
+        &.active{
+          opacity: 1;
+        }
+
+      }
+      &__check{
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        margin-right: 12px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+
+      }
+    }
+
+  }
+  &__ico{
+    margin-right: -10px;
+    svg{
+      transform: rotate(180deg);
+    }
+    @include min980{
+      display: none;
+    }
+
+  }
+}
+@include max979{
+  .collapse{
+    .collapseData{
+      display: none;
+    }
+    .weapon__ico{
+      svg{
+        transform: none;
+      }
+    }
+  }
+}
+
+.before_content{
+  @include beforeContent;
+}
+@include skinBg;
